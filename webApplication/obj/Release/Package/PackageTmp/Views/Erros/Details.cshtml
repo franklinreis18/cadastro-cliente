@@ -1,0 +1,58 @@
+﻿@model webApplication.Models.Erro
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Erro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Trace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Trace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Done)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Done)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Solution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Solution)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdErro }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

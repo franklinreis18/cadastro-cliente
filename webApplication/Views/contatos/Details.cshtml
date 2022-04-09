@@ -1,0 +1,58 @@
+﻿@model webApplication.Models.contato
+
+@{
+    ViewBag.Title = "Detalhes do contato";
+}
+
+<h2>Detalhes do contato</h2>
+
+<div>
+    <h4>contato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cliente.nomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliente.nomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.setorContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.setorContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefoneContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefoneContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailContato)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idContato }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

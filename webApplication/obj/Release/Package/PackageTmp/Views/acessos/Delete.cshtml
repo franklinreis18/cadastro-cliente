@@ -1,0 +1,72 @@
+﻿@model webApplication.Models.acesso
+
+@{
+    ViewBag.Title = "Deletar Acesso";
+}
+
+<h2>Deletar Acesso</h2>
+
+<h3>Voce tem certeza que quer deletar?</h3>
+<div>
+    <h4>acesso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cliente.nomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliente.nomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoAcesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hostAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hostAcesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.usuarioAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuarioAcesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senhaAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senhaAcesso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.obsAcesso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.obsAcesso)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

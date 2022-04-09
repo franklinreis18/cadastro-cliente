@@ -1,0 +1,66 @@
+﻿@model webApplication.Models.cliente
+
+@{
+    ViewBag.Title = "Detalhes do cliente";
+}
+
+<h2>Detalhes do cliente</h2>
+
+<div>
+    <h4>cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cnpjCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cnpjCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.unidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.unidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enderecoFisico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enderecoFisico)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.enderecoEletronico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.enderecoEletronico)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idCliente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,70 @@
+﻿@model IEnumerable<webApplication.Models.contato>
+
+@{
+    ViewBag.Title = "Lista de contatos";
+}
+
+<h2>Lista de contatos</h2>
+
+<p>
+    @Html.ActionLink("Criar novo", "Create")
+</p>
+<div>
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-md-4">
+                <p><input type="text" name="texto" id="texto" placeholder="Digite a pesquisa" /></p>
+            </div>
+            <div class="col-md-4">
+                <p><button type="submit">Filtrar</button></p>
+            </div>
+        </div>
+    }
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cliente.nomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.setorContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefoneContato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailContato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cliente.nomeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.setorContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefoneContato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailContato)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idContato }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idContato }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idContato })
+        </td>
+    </tr>
+}
+
+</table>

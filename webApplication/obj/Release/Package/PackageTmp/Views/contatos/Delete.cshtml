@@ -1,0 +1,64 @@
+﻿@model webApplication.Models.contato
+
+@{
+    ViewBag.Title = "Deletar";
+}
+
+<h2>Deletar um contato</h2>
+
+<h3>Tem certeza que quer deletar?</h3>
+<div>
+    <h4>contato</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cliente.nomeCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliente.nomeCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.setorContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.setorContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefoneContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefoneContato)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailContato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailContato)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

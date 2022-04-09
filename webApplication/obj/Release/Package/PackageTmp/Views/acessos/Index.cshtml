@@ -1,0 +1,76 @@
+﻿@model IEnumerable<webApplication.Models.acesso>
+
+@{
+    ViewBag.Title = "Lista de acesso";
+}
+
+<h2>Lista de acesso</h2>
+
+<p>
+    @Html.ActionLink("Criar um novo", "Create")
+</p>
+<div>
+	@using(Html.BeginForm()) {
+		@Html.AntiForgeryToken()
+		<div class="row">
+			<div class="col-md-4">
+				<p><input type="text" name="texto" id="texto" placeholder="Digite a pesquisa" /></p>
+			</div>
+			<div class="col-md-4">
+				<p><button type="submit">Filtrar</button></p>
+			</div>
+		</div>
+	}
+</div>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cliente.nomeCliente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoAcesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hostAcesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usuarioAcesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senhaAcesso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.obsAcesso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cliente.nomeCliente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoAcesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hostAcesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioAcesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.senhaAcesso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.obsAcesso)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idAcesso }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idAcesso }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idAcesso })
+        </td>
+    </tr>
+}
+
+</table>
